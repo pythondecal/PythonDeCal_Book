@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+anim = animation.FuncAnimation(fig, animate, init_func=init, frames=200, interval=20, blit=True)
+anim.save('sine_wave_animation.mp4', fps=30, extra_args=['-vcodec', 'libx264'])
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [4][0m, in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      1[0m anim [38;5;241m=[39m animation[38;5;241m.[39mFuncAnimation(fig, animate, init_func[38;5;241m=[39minit, frames[38;5;241m=[39m[38;5;241m200[39m, interval[38;5;241m=[39m[38;5;241m20[39m, blit[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[0;32m----> 2[0m [43manim[49m[38;5;241;43m.[39;49m[43msave[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43msine_wave_animation.mp4[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mfps[49m[38;5;241;43m=[39;49m[38;5;241;43m30[39;49m[43m,[49m[43m [49m[43mextra_args[49m[38;5;241;43m=[39;49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43m-vcodec[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mlibx264[39;49m[38;5;124;43m'[39;49m[43m][49m[43m)[49m
+
+File [0;32m/opt/anaconda3/lib/python3.9/site-packages/matplotlib/animation.py:1051[0m, in [0;36mAnimation.save[0;34m(self, filename, writer, fps, dpi, codec, bitrate, extra_args, metadata, extra_anim, savefig_kwargs, progress_callback)[0m
+[1;32m   1048[0m         writer_cls [38;5;241m=[39m PillowWriter  [38;5;66;03m# Always available.[39;00m
+[1;32m   1049[0m         _log[38;5;241m.[39mwarning([38;5;124m"[39m[38;5;124mMovieWriter [39m[38;5;132;01m%s[39;00m[38;5;124m unavailable; using Pillow [39m[38;5;124m"[39m
+[1;32m   1050[0m                      [38;5;124m"[39m[38;5;124minstead.[39m[38;5;124m"[39m, writer)
+[0;32m-> 1051[0m     writer [38;5;241m=[39m [43mwriter_cls[49m[43m([49m[43mfps[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mwriter_kwargs[49m[43m)[49m
+[1;32m   1052[0m _log[38;5;241m.[39minfo([38;5;124m'[39m[38;5;124mAnimation.save using [39m[38;5;132;01m%s[39;00m[38;5;124m'[39m, [38;5;28mtype[39m(writer))
+[1;32m   1054[0m [38;5;28;01mif[39;00m [38;5;124m'[39m[38;5;124mbbox_inches[39m[38;5;124m'[39m [38;5;129;01min[39;00m savefig_kwargs:
+
+[0;31mTypeError[0m: __init__() got an unexpected keyword argument 'extra_args'
+TypeError: __init__() got an unexpected keyword argument 'extra_args'
+
