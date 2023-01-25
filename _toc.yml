@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Introductory Python & Programming
+    chapters:
+    - file: Notebooks/Python_Fundamentals
+    - file: Notebooks/Debugging_Guide
+  - caption: Plotting in Python
+    chapters:
+    - file: Notebooks/Ultimate_Plotting_Guide
+    - file: Notebooks/lines_with_gradient_cmap
+    - file: Notebooks/Glow_Curves
+  - caption: Advanced Topics
+    chapters:
+    - file: Notebooks/Animation_Guide
+    
